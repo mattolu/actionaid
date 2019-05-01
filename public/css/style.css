@@ -1,0 +1,66 @@
+.asterick::after{
+    content: "*";
+    color: red;
+    padding-left: 5px;
+}
+button{
+    background-color: red !important;
+}
+.signupbutton {
+    background-color: darkred !important;
+    border-radius: 0rem;
+    color: white;
+}
+body{
+    background-color: white !important;
+}
+.navbar-laravel{
+    box-shadow: none !important;
+}
+a{
+    color: red !important;
+}
+.red{
+color:red !important;
+}
+.redbg{
+    background-color: firebrick !important;
+}
+
+.dashboardbutton{
+    background-color: white !important;
+}
+.fixedwidth{
+    width: 110px !important;
+    border: 1px solid !important;
+    border-radius: 0rem;
+}
+.Lfixedwidth{
+    width: 150px !important;
+    border: 1px solid !important;
+    border-radius: 0rem;
+}
+.Lfixedwidth:active,
+.fixedwidth:hover{
+    background-color: red !important;
+}
+.fixedwidth2{
+    width: 110px !important;
+    border: 1px solid !important;
+    border-radius: 0rem;
+    background-color: white;
+}
+
+.active
+{
+    background-color:dimgray;
+}
+
+.whitebg{
+    background-color: white !important;
+}
+
+
+.white{
+    color: white;
+}
