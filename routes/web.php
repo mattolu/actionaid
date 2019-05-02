@@ -13,7 +13,7 @@ use App\Http\Controllers\DonationController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('auth/login');
 });
 
 Auth::routes();
@@ -24,3 +24,6 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('donation', 'DonationController');
     Route::get('/instructions', 'DonationController@show')->name('instructions');
 });
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
+// Route::get('/send_receipt', 'ReceiptController@sendReceipt');

@@ -54,9 +54,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($donations as $donation)
+                                            @foreach($donations as $index => $donation)
                                             <tr>
-                                                <td>{{$donation->id}}</td>
+                                                <td>{{$index + 1}}</td>
                                                 <td>{{$donation->frequency}}</td>
                                                 <td>{{$donation->created_at}}</td>
                                                 <td>{{$donation->amount}}</td>

@@ -60,7 +60,7 @@ class DonationController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    public function store(Request $request)
+    public function show(Request $request)
     {
         $user_id = Auth::id();
         $user = User::find($user_id);

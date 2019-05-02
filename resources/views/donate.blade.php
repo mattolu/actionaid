@@ -54,31 +54,55 @@
             
             <div class="column mb-2" style="background-color:aliceblue">
 
-                <form method="POST" action="{{ route('donation.store') }}">
+                <form method="POST" action="{{ route('pay') }}">
                     @csrf
                           <div class="btn-group btn-group-toggle row col-md-12 mt-4 mb-4 justify-content-center" data-toggle="buttons">
                                   <label for="frequency" class="btn Lfixedwidth mr-5">
-                                    <input type="radio" class="form-control" name="frequency" id="once" autocomplete="off" value="Give Once">Give Once</h5>
+                                    <input type="radio" class="form-control" name="metadata" id="once" autocomplete="off" 
+                                    value="{{ json_encode($array = ['frequency' => 'Give once']) }}" >Give Once</h5>
+                                    
+                                    
                                   </label>
                                   <label for="frequency" class="btn Lfixedwidth ml-5">
-                                    <input type="radio" class="form-control" name="frequency" id="monthly" autocomplete="off" value= "Give Monthly">Give Monthly</h5>
-                                  </label>
+                                    <input type="radio" class="form-control" name="metadata" id="monthly" autocomplete="off" 
+                                    value="{{ json_encode($array = ['frequency' => 'Give Monthly']) }}">Give Monthly</h5>
+                                  
+                                </label>
+                                <input type="hidden" name="email" value="abodunrinmatthew@gmail.com"> 
+                                    <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> 
+                                    <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}">
+                                  
+                                    {{ csrf_field() }} 
                           </div>
                           <div class="btn-group btn-group-toggle row col-md-12 mt-4 mb-4 justify-content-center" data-toggle="buttons">
                                   <label  for="amount" class="btn fixedwidth2 mr-2">
-                                    <input type="radio" class="form-control" name="amount" id="1" autocomplete="off" value="2000"> NGN 2,000
-                                  </label>
+                                    <input type="radio" class="form-control" name="amount" id="1" autocomplete="off" value="200000"> NGN 2,000
+ 
+                                    
+                                </label>
                                   <label for="amount" class="btn fixedwidth2 mr-2">
-                                    <input type="radio" class="form-control" name="amount" id="2" autocomplete="off" value= "3000"> NGN 3,000
-                                  </label>
+                                    <input type="radio" class="form-control" name="amount" id="2" autocomplete="off" value= "300000"> NGN 3,000
+                                    
+                                   
+                                </label>
                                   <label for="amount" class="btn fixedwidth2 mr-2 ">
-                                      <input type="radio" class="form-control" name="amount" id="3" autocomplete="off" value= "5000"> NGN 5,000
-                                  </label>
+                                      <input type="radio" class="form-control" name="amount" id="3" autocomplete="off" value= "500000"> NGN 5,000
+                                     
+                                    
+                                    </label>
                                   <label for="amount" class="btn fixedwidth2">
-                                      <input type="radio" class="form-control" name="amount" id="4" autocomplete="off" value= "10000"> NGN 10,000
-                                  </label>
+                                      <input type="radio" class="form-control" name="amount" id="4" autocomplete="off" value= "1000000"> NGN 10,000
+                                     
+                                      
+                                    </label>
+                                    <input type="hidden" name="email" value="{{ Auth::user()->email }}"> 
+                                      <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> 
+                                      <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> 
+                                      {{ csrf_field() }} 
                           </div>
-                         
+                           
+
+                            
                     <div class="row mb-2 mt-4">
                         <div class="col-md-2 offset-md-5 ">
                         <button class="btn redbg justify-content-center" type='submit'>

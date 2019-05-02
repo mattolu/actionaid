@@ -38,10 +38,10 @@
                                     {{ session('status') }}
                                 </div>
                             @endif
-
+                           
                     
                         <div class="white p-3"><p>
-                                Dear {{($user1)}} {{($user)}}, your donation is SUCCESSFUL! <br> <br>
+                                Dear  {{($firstname)}} {{($lastname)}}, your donation is SUCCESSFUL! <br> <br>
 
                                 Please follow the instruction below to generate your receipt. 
                                 
